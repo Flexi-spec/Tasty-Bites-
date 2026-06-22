@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Tasty Bites Small Chops &amp; Grills</title>
+<meta name="description" content="Get in touch with Tasty Bites Port Harcourt. Find our address, opening hours, WhatsApp, phone number and delivery areas across PH City.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)">
+          <path d="M6 19h12v-2.2c0-.5-.4-.9-.9-1a3.6 3.6 0 0 0 .9-2.4c0-1.9-1.5-3.4-3.3-3.4-.2 0-.5 0-.7.1A3.8 3.8 0 0 0 12 8a3.8 3.8 0 0 0-2 .1 4 4 0 0 0-.7-.1C7.5 8 6 9.5 6 11.4c0 .9.3 1.7.9 2.4-.5.1-.9.5-.9 1V19Z"/>
+          <path d="M8 19v2h8v-2"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="t1">Tasty <span>Bites</span></span>
+        <span class="t2">Small Chops &amp; Grills</span>
+      </span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+      <a href="order.html">Order</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-whatsapp btn-sm nav-wa" href="https://wa.me/2348125752341?text=Hello%20Tasty%20Bites!%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3c-7.2 0-13.04 5.83-13.04 13.02 0 2.3.6 4.46 1.74 6.4L3 29l6.76-1.77a13 13 0 0 0 6.28 1.6h.01c7.2 0 13.04-5.83 13.04-13.02C29.09 8.84 23.25 3 16.04 3zm0 23.8a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-4 1.05 1.07-3.9-.26-.4a10.78 10.78 0 1 1 9.1 5z"/></svg>
+        <span class="nav-wa-text">Order Now</span>
+      </a>
+      <button class="cart-pill" aria-label="View order cart" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-count">0</span>
+      </button>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="nav-backdrop"></div>
+</header>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+    <span class="eyebrow">Get In Touch</span>
+    <h1>We're easy to reach — come see us or chat on WhatsApp</h1>
+    <p>For orders, catering enquiries, or just a question — we're always available from 8 AM daily.</p>
+  </div>
+</div>
+
+<!-- ============ CONTACT MAIN ============ -->
+<section class="section">
+  <div class="container two-col" style="align-items:start;">
+
+    <!-- Contact form -->
+    <div class="reveal">
+      <span class="eyebrow">Send a Message</span>
+      <h2 class="display" style="font-size:clamp(1.5rem,3vw,2rem);margin-bottom:24px;">Drop us a message</h2>
+
+      <div class="form-success" role="alert">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        <span>Message received! We'll get back to you on WhatsApp or by phone shortly.</span>
+      </div>
+
+      <div class="form-card">
+        <form id="contact-form" novalidate>
+          <div class="form-field">
+            <label for="contact-name">Full Name</label>
+            <input type="text" id="contact-name" name="name" placeholder="e.g. Chioma Okafor" required autocomplete="name">
+          </div>
+          <div class="form-field">
+            <label for="contact-phone">Phone / WhatsApp Number</label>
+            <input type="tel" id="contact-phone" name="phone" placeholder="e.g. 08012345678" required autocomplete="tel">
+          </div>
+          <div class="form-field">
+            <label for="contact-subject">Subject</label>
+            <select id="contact-subject" name="subject">
+              <option value="">— Select a subject —</option>
+              <option value="order">I want to place an order</option>
+              <option value="catering">Event / catering enquiry</option>
+              <option value="custom">Custom platter request</option>
+              <option value="feedback">Feedback / compliment</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" placeholder="Tell us what you need — order details, event date, delivery area, quantity, etc." required></textarea>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <p style="color:var(--brown-soft);font-size:.85rem;margin-top:14px;line-height:1.6;">
+        For fastest response, message us directly on
+        <a href="https://wa.me/2348125752341" target="_blank" rel="noopener" style="color:var(--green-wa);font-weight:700;">WhatsApp</a>
+        — we typically reply within minutes during opening hours.
+      </p>
+    </div>
+
+    <!-- Info block -->
+    <div class="reveal">
+      <span class="eyebrow">Contact Details</span>
+      <h2 class="display" style="font-size:clamp(1.5rem,3vw,2rem);margin-bottom:24px;">Find us or reach us</h2>
+      <div class="info-list">
+        <div class="info-item">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+          </span>
+          <div>
+            <h4>Our Address</h4>
+            <p>62/63 East-West Road, Brainfield Arcade<br>(Old Brainfield School / Opposite Grace Covenant Ministries)<br>Eligbolo / Eliozu Extension, Port Harcourt, Rivers State.</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.5a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7A2 2 0 0 1 22 16.9Z"/></svg>
+          </span>
+          <div>
+            <h4>Phone</h4>
+            <p><a href="tel:+2348125752341">0812 575 2341</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="ico" style="color:var(--green-wa);">
+            <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3c-7.2 0-13.04 5.83-13.04 13.02 0 2.3.6 4.46 1.74 6.4L3 29l6.76-1.77a13 13 0 0 0 6.28 1.6h.01c7.2 0 13.04-5.83 13.04-13.02C29.09 8.84 23.25 3 16.04 3zm0 23.8a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-4 1.05 1.07-3.9-.26-.4a10.78 10.78 0 1 1 9.1 5z"/><path d="M22.1 18.9c-.33-.17-1.95-.96-2.26-1.07-.3-.11-.52-.17-.74.17-.22.33-.85 1.07-1.04 1.3-.19.22-.38.25-.71.08-.33-.17-1.4-.51-2.66-1.63-.98-.87-1.65-1.95-1.84-2.28-.19-.33-.02-.5.15-.67.15-.15.33-.39.5-.58.17-.2.22-.33.33-.55.11-.22.06-.42-.03-.58-.08-.17-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.58.08-.88.42-.3.33-1.15 1.12-1.15 2.73 0 1.6 1.18 3.15 1.34 3.37.17.22 2.32 3.54 5.62 4.96.78.34 1.4.54 1.87.69.79.25 1.5.21 2.07.13.63-.1 1.95-.8 2.23-1.57.27-.78.27-1.45.19-1.58-.08-.14-.3-.22-.63-.39z"/></svg>
+          </span>
+          <div>
+            <h4>WhatsApp</h4>
+            <p><a href="https://wa.me/2348125752341" target="_blank" rel="noopener">Chat with us: +234 812 575 2341</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+          </span>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:hello@tastybites.africa.restaurant">hello@tastybites.africa.restaurant</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          </span>
+          <div>
+            <h4>Opening Hours</h4>
+            <p>Open daily, Monday – Sunday<br><strong>8:00 AM – 6:00 PM</strong></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <div>
+            <h4>Instagram</h4>
+            <p><a href="https://instagram.com/tastybitesfoods1" target="_blank" rel="noopener">@tastybitesfoods1</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAP ============ -->
+<section class="section section--deep">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center;">Find Us On the Map</span>
+      <h2 class="display">Brainfield Arcade, East-West Road, Eliozu</h2>
+      <p>We're on East-West Road, directly opposite Grace Covenant Ministries. Look for the signage at Brainfield Arcade.</p>
+    </div>
+    <div class="map-frame reveal">
+      <iframe
+        src="https://www.google.com/maps?q=Brainfield%20Arcade%2C%20East-West%20Road%2C%20Eliozu%2C%20Port%20Harcourt&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Tasty Bites location on East-West Road, Eliozu, Port Harcourt">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DELIVERY AREAS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center;">We Deliver Across PH</span>
+      <h2 class="display">Delivery areas we cover</h2>
+      <p>Home and office delivery available across Port Harcourt. Not sure if we cover your area? Just WhatsApp us — we'll sort it out.</p>
+    </div>
+    <div class="area-pills reveal">
+      <span>Eliozu</span>
+      <span>Eligbolo</span>
+      <span>Rumuola</span>
+      <span>Rumuibekwe</span>
+      <span>Rumuokoro</span>
+      <span>Rumuosi</span>
+      <span>Rumuodara</span>
+      <span>Rumuokwurusi</span>
+      <span>GRA Phase 1</span>
+      <span>GRA Phase 2</span>
+      <span>GRA Phase 3</span>
+      <span>Trans Amadi</span>
+      <span>Woji</span>
+      <span>Abuloma</span>
+      <span>D-Line</span>
+      <span>Peter Odili</span>
+      <span>Rumuigbo</span>
+      <span>Alakahia</span>
+      <span>Choba</span>
+      <span>Ozuoba</span>
+      <span>Mgbuoba</span>
+      <span>Eneka</span>
+      <span>Rumunduru</span>
+      <span>Ada George</span>
+      <span>Rukpokwu</span>
+      <span>Wimbi</span>
+      <span>NTA Road</span>
+      <span>Ogbunabali</span>
+      <span>Amadi Ama</span>
+      <span>Mile 1</span>
+      <span>Mile 3</span>
+      <span>Mile 4</span>
+    </div>
+    <p style="color:var(--brown-soft);margin-top:24px;text-align:center;font-size:.9rem;">
+      Don't see your area? <a href="https://wa.me/2348125752341?text=Hello%20Tasty%20Bites!%20I%27d%20like%20to%20check%20if%20you%20deliver%20to%20my%20area." target="_blank" rel="noopener" style="color:var(--red);font-weight:700;">Ask us on WhatsApp</a> — we'll confirm delivery availability and cost for you.
+    </p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M6 19h12v-2.2c0-.5-.4-.9-.9-1a3.6 3.6 0 0 0 .9-2.4c0-1.9-1.5-3.4-3.3-3.4-.2 0-.5 0-.7.1A3.8 3.8 0 0 0 12 8a3.8 3.8 0 0 0-2 .1 4 4 0 0 0-.7-.1C7.5 8 6 9.5 6 11.4c0 .9.3 1.7.9 2.4-.5.1-.9.5-.9 1V19Z"/><path d="M8 19v2h8v-2"/></svg>
+        </span>
+        <span class="brand-text"><span class="t1">Tasty Bites</span></span>
+      </a>
+      <p>PH City's Tastiest Small Chops – Fresh &amp; Absolutely Delicious – Every Bite Counts!</p>
+      <div class="social-row">
+        <a href="https://instagram.com/tastybitesfoods1" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://wa.me/2348125752341" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3c-7.2 0-13.04 5.83-13.04 13.02 0 2.3.6 4.46 1.74 6.4L3 29l6.76-1.77a13 13 0 0 0 6.28 1.6h.01c7.2 0 13.04-5.83 13.04-13.02C29.09 8.84 23.25 3 16.04 3z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="menu.html">Full Menu</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="order.html">Quick Order</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+2348125752341">0812 575 2341</a></li>
+        <li><a href="https://wa.me/2348125752341" target="_blank" rel="noopener">WhatsApp Us</a></li>
+        <li><a href="mailto:hello@tastybites.africa.restaurant">hello@tastybites.africa.restaurant</a></li>
+        <li><a href="contact.html">Contact Page</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Visit</h5>
+      <ul>
+        <li>62/63 East-West Road, Brainfield Arcade, Eliozu Extension, Port Harcourt</li>
+        <li>Open daily, 8:00 AM – 6:00 PM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container foot-bottom">
+    <span>© <span data-year>2026</span> Tasty Bites Small Chops &amp; Grills. All rights reserved.</span>
+    <span>tastybites.africa.restaurant</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/2348125752341?text=Hello%20Tasty%20Bites!%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3c-7.2 0-13.04 5.83-13.04 13.02 0 2.3.6 4.46 1.74 6.4L3 29l6.76-1.77a13 13 0 0 0 6.28 1.6h.01c7.2 0 13.04-5.83 13.04-13.02C29.09 8.84 23.25 3 16.04 3zm0 23.8a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-4 1.05 1.07-3.9-.26-.4a10.78 10.78 0 1 1 9.1 5z"/><path d="M22.1 18.9c-.33-.17-1.95-.96-2.26-1.07-.3-.11-.52-.17-.74.17-.22.33-.85 1.07-1.04 1.3-.19.22-.38.25-.71.08-.33-.17-1.4-.51-2.66-1.63-.98-.87-1.65-1.95-1.84-2.28-.19-.33-.02-.5.15-.67.15-.15.33-.39.5-.58.17-.2.22-.33.33-.55.11-.22.06-.42-.03-.58-.08-.17-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.58.08-.88.42-.3.33-1.15 1.12-1.15 2.73 0 1.6 1.18 3.15 1.34 3.37.17.22 2.32 3.54 5.62 4.96.78.34 1.4.54 1.87.69.79.25 1.5.21 2.07.13.63-.1 1.95-.8 2.23-1.57.27-.78.27-1.45.19-1.58-.08-.14-.3-.22-.63-.39z"/></svg>
+</a>
+
+<div class="cart-backdrop"></div>
+<aside class="cart-drawer" aria-label="Your order">
+  <div class="cart-drawer-head">
+    <h3>Your Order</h3>
+    <button class="cart-close" type="button" aria-label="Close cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <div class="cart-items"></div>
+  <div class="cart-drawer-foot">
+    <div class="cart-total"><span>Total</span><span class="cart-total-amount">₦0</span></div>
+    <button class="btn btn-whatsapp btn-block cart-whatsapp-btn" type="button">
+      <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3c-7.2 0-13.04 5.83-13.04 13.02 0 2.3.6 4.46 1.74 6.4L3 29l6.76-1.77a13 13 0 0 0 6.28 1.6h.01c7.2 0 13.04-5.83 13.04-13.02C29.09 8.84 23.25 3 16.04 3z"/></svg>
+      Send Order via WhatsApp
+    </button>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>

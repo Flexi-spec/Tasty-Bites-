@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Order | Tasty Bites Small Chops &amp; Grills</title>
+<meta name="description" content="Order fresh small chops and platters from Tasty Bites, Port Harcourt. Pick your packs, add your address and we'll send your order straight to WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Order page layout */
+  .order-layout{
+    display:grid;
+    grid-template-columns:1fr 340px;
+    gap:40px;
+    align-items:flex-start;
+  }
+  @media(max-width:880px){ .order-layout{ grid-template-columns:1fr; } }
+
+  /* Summary panel */
+  .order-summary{
+    background:var(--brown-ink);
+    border-radius:var(--radius-lg);
+    padding:28px;
+    position:sticky;
+    top:100px;
+    color:var(--cream);
+  }
+  .order-summary h3{ color:var(--gold); margin-bottom:20px; font-family:var(--font-display); }
+  .order-summary-lines{ display:flex; flex-direction:column; gap:10px; min-height:56px; margin-bottom:20px; }
+  .summary-line{
+    display:flex; justify-content:space-between; gap:12px;
+    font-size:.9rem; padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .summary-line span:last-child{ font-weight:700; color:var(--gold); flex:none; }
+  .summary-empty{ color:rgba(255,255,255,.45); font-size:.88rem; }
+  .order-summary-total{
+    display:flex; justify-content:space-between; align-items:center;
+    border-top:1px solid rgba(255,255,255,.15); padding-top:16px; margin-bottom:20px;
+    font-weight:700; font-size:1rem;
+  }
+  .order-summary-total-amount{ font-family:var(--font-display); font-size:1.5rem; color:var(--gold); }
+
+  /* Customer fields inside summary */
+  .order-fields{ display:flex; flex-direction:column; gap:12px; margin-bottom:20px; }
+  .order-fields label{ font-size:.8rem; font-weight:700; color:rgba(255,255,255,.6); display:block; margin-bottom:4px; }
+  .order-fields input, .order-fields select{
+    width:100%; padding:10px 14px; border-radius:var(--radius-sm);
+    border:1.5px solid rgba(255,255,255,.15); background:rgba(255,255,255,.07);
+    color:var(--cream); font-size:.9rem; font-family:var(--font-body); outline:none;
+    transition:border-color .2s;
+  }
+  .order-fields input::placeholder{ color:rgba(255,255,255,.3); }
+  .order-fields input:focus, .order-fields select:focus{ border-color:var(--gold); }
+  .order-fields select option{ background:var(--brown-ink); color:var(--cream); }
+
+  /* Pack cards */
+  .pack-picker{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:22px; }
+  .pack-card{
+    background:#fff; border-radius:var(--radius-md); padding:22px;
+    border:2px solid var(--cream-deep); transition:border-color .2s, box-shadow .2s;
+    box-shadow:var(--shadow-soft);
+  }
+  .pack-card.selected{ border-color:var(--gold-deep); box-shadow:0 4px 24px rgba(232,169,58,.18); }
+  .pack-card h4{ margin-bottom:3px; }
+  .pack-card .pp{ color:var(--red); font-weight:800; font-family:var(--font-display); font-size:1.2rem; margin-bottom:8px; }
+  .pack-card .desc{ color:var(--brown); font-size:.86rem; margin-bottom:18px; line-height:1.55; }
+  .pack-card .stepper{ display:flex; align-items:center; justify-content:space-between; }
+  .stepper-label{ font-size:.8rem; font-weight:700; color:var(--brown-soft); text-transform:uppercase; letter-spacing:.04em; }
+  .stepper-btns{ display:flex; align-items:center; gap:10px; }
+  .stepper-btns button{
+    width:34px; height:34px; border-radius:50%; border:2px solid var(--cream-deep);
+    background:#fff; font-size:1.2rem; cursor:pointer; font-weight:700; color:var(--brown-ink);
+    display:flex; align-items:center; justify-content:center; line-height:1;
+    transition:background .15s, border-color .15s, color .15s;
+  }
+  .stepper-btns button:hover{ background:var(--red); border-color:var(--red); color:#fff; }
+  .qty-display{ font-family:var(--font-display); font-size:1.2rem; font-weight:700; min-width:22px; text-align:center; color:var(--brown-ink); }
+
+  /* Pack badge for featured items */
+  .pack-badge{
+    display:inline-block; font-size:.72rem; font-weight:800; text-transform:uppercase;
+    letter-spacing:.06em; background:var(--gold); color:var(--brown-ink);
+    padding:3px 10px; border-radius:20px; margin-bottom:10px;
+  }
+
+  /* Direct order section */
+  .direct-order-strip{
+    background:var(--cream-deep); border-radius:var(--radius-lg); padding:32px;
+    display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+    margin-top:48px; border:2px dashed var(--gold-deep);
+  }
+  .direct-order-strip p{ color:var(--brown); font-size:.95rem; max-width:460px; margin:0; }
+  .direct-order-strip strong{ color:var(--brown-ink); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)">
+          <path d="M6 19h12v-2.2c0-.5-.4-.9-.9-1a3.6 3.6 0 0 0 .9-2.4c0-1.9-1.5-3.4-3.3-3.4-.2 0-.5 0-.7.1A3.8 3.8 0 0 0 12 8a3.8 3.8 0 0 0-2 .1 4 4 0 0 0-.7-.1C7.5 8 6 9.5 6 11.4c0 .9.3 1.7.9 2.4-.5.1-.9.5-.9 1V19Z"/>
+          <path d="M8 19v2h8v-2"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="t1">Tasty <span>Bites</span></span>
+        <span class="t2">Small Chops &amp; Grills</span>
+      </span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="order.html" aria-current="page">Order</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-whatsapp btn-sm nav-wa" href="https://wa.me/2348125752341?text=Hello%20Tasty%20Bites!%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3c-7.2 0-13.04 5.83-13.04 13.02 0 2.3.6 4.46 1.74 6.4L3 29l6.76-1.77a13 13 0 0 0 6.28 1.6h.01c7.2 0 13.04-5.83 13.04-13.02C29.09 8.84 23.25 3 16.04 3zm0 23.8a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-4 1.05 1.07-3.9-.26-.4a10.78 10.78 0 1 1 9.1 5z"/></svg>
+        <span class="nav-wa-text">Order Now</span>
+      </a>
+      <button class="cart-pill" aria-label="View order cart" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-count">0</span>
+      </button>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="nav-backdrop"></div>
+</header>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Order</div>
+    <span class="eyebrow">Quick Order</span>
+    <h1>Pick your packs &amp; send via WhatsApp</h1>
+    <p>Choose how many of each pack you want, fill in your delivery details, and tap the button — your order goes straight to our WhatsApp.</p>
+  </div>
+</div>
+
+<!-- ============ ORDER LAYOUT ============ -->
+<section class="section">
+  <div class="container order-layout">
+
+    <!-- LEFT: Pack picker -->
+    <div>
+      <span class="eyebrow" style="margin-bottom:24px;display:flex;">Choose Your Packs</span>
+
+      <div class="pack-picker">
+
+        <!-- Regular Pack -->
+        <div class="pack-card reveal"
+             data-pack-id="regular-pack"
+             data-pack-name="Regular Pack"
+             data-pack-price="4000">
+          <span class="pack-badge">Most Popular</span>
+          <h4>Regular Pack</h4>
+          <p class="pp">₦4,000</p>
+          <p class="desc">4 Puff Puff · 4 Plantain Pops/Mosa · 1 Spring Roll · 1 Samosa · 1 Gizzard · 1 Fish Nugget · 1 BBQ Chicken. The perfect starter pack.</p>
+          <div class="stepper">
+            <span class="stepper-label">Qty</span>
+            <div class="stepper-btns">
+              <button type="button" data-step="-1" aria-label="Remove one Regular Pack">−</button>
+              <span class="qty-display">0</span>
+              <button type="button" data-step="1" aria-label="Add one Regular Pack">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mini Platter -->
+        <div class="pack-card reveal"
+             data-pack-id="mini-platter"
+             data-pack-name="Mini Platter"
+             data-pack-price="19000">
+          <span class="pack-badge" style="background:var(--red);color:#fff;">Free Puff Puff 🎉</span>
+          <h4>Mini Platter</h4>
+          <p class="pp">₦19,000</p>
+          <p class="desc">A full platter ideal for small gatherings — spring rolls, samosas, puff puff, gizzard, BBQ chicken and more. Free Puff Puff included!</p>
+          <div class="stepper">
+            <span class="stepper-label">Qty</span>
+            <div class="stepper-btns">
+              <button type="button" data-step="-1" aria-label="Remove one Mini Platter">−</button>
+              <span class="qty-display">0</span>
+              <button type="button" data-step="1" aria-label="Add one Mini Platter">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mini Platter Deluxe -->
+        <div class="pack-card reveal"
+             data-pack-id="mini-platter-deluxe"
+             data-pack-name="Mini Platter Deluxe"
+             data-pack-price="21000">
+          <h4>Mini Platter Deluxe</h4>
+          <p class="pp">₦21,000</p>
+          <p class="desc">Everything in the Mini Platter, upgraded with extra grills and premium snail additions. Great for that extra-special occasion.</p>
+          <div class="stepper">
+            <span class="stepper-label">Qty</span>
+            <div class="stepper-btns">
+              <button type="button" data-step="-1" aria-label="Remove one Mini Platter Deluxe">−</button>
+              <span class="qty-display">0</span>
+              <button type="button" data-step="1" aria-label="Add one Mini Platter Deluxe">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Large Platter -->
+        <div class="pack-card reveal"
+             data-pack-id="large-platter"
+             data-pack-name="Large Platter"
+             data-pack-price="25000">
+          <h4>Large Platter</h4>
+          <p class="pp">₦23,000 – ₦28,000</p>
+          <p class="desc">Our big-event showstopper. Loaded with everything — puff puff, spring rolls, samosas, BBQ chicken, gizzard, snails, meatballs, and more.</p>
+          <div class="stepper">
+            <span class="stepper-label">Qty</span>
+            <div class="stepper-btns">
+              <button type="button" data-step="-1" aria-label="Remove one Large Platter">−</button>
+              <span class="qty-display">0</span>
+              <button type="button" data-step="1" aria-label="Add one Large Platter">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Royal Platter -->
+        <div class="pack-card reveal"
+             data-pack-id="royal-platter"
+             data-pack-name="Royal Platter"
+             data-pack-price="28000">
+          <span class="pack-badge" style="background:var(--brown-ink);color:var(--gold);">Premium</span>
+          <h4>Royal Platter</h4>
+          <p class="pp">₦28,000</p>
+          <p class="desc">Our most loaded platter — built for big celebrations. Full portions of every item on the menu, beautifully arranged and generously packed.</p>
+          <div class="stepper">
+            <span class="stepper-label">Qty</span>
+            <div class="stepper-btns">
+              <button type="button" data-step="-1" aria-label="Remove one Royal Platter">−</button>
+              <span class="qty-display">0</span>
+              <button type="button" data-step="1" aria-label="Add one Royal Platter">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- BBQ Chicken -->
+        <div class="pack-card reveal"
+             data-pack-id="bbq-chicken"
+             data-pack-name="BBQ Chicken (per piece)"
+             data-pack-price="1800">
+          <h4>BBQ Chicken</h4>
+          <p class="pp">₦1,800 / piece</p>
+          <p class="desc">Juicy, smoky, and perfectly charred. Add extra BBQ chicken pieces to any order — they go fast, so add enough.</p>
+          <div class="stepper">
+            <span class="stepper-label">Qty (pcs)</span>
+            <div class="stepper-btns">
+              <button type="button" data-step="-1" aria-label="Remove one BBQ Chicken piece">−</button>
+              <span class="qty-display">0</span>
+              <button type="button" data-step="1" aria-label="Add one BBQ Chicken piece">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spring Roll Pack -->
+        <div class="pack-card reveal"
+             data-pack-id="spring-roll-pack"
+             data-pack-name="Spring Roll Pack (10 pcs)"
+             data-pack-price="3500">
+          <h4>Spring Roll Pack</h4>
+          <p class="pp">₦3,500 / 10 pcs</p>
+          <p class="desc">Crispy, golden spring rolls packed 10 per order. Great as a standalone snack or a tasty top-up alongside any platter.</p>
+          <div class="stepper">
+            <span class="stepper-label">Qty</span>
+            <div class="stepper-btns">
+              <button type="button" data-step="-1" aria-label="Remove one Spring Roll Pack">−</button>
+              <span class="qty-display">0</span>
+              <button type="button" data-step="1" aria-label="Add one Spring Roll Pack">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Peppered Gizzard -->
+        <div class="pack-card reveal"
+             data-pack-id="peppered-gizzard"
+             data-pack-name="Peppered Gizzard"
+             data-pack-price="2500">
+          <h4>Peppered Gizzard</h4>
+          <p class="pp">₦2,500</p>
+          <p class="desc">Tender, well-seasoned gizzard in a spicy, aromatic pepper sauce. A customer favourite — goes perfectly alongside any pack.</p>
+          <div class="stepper">
+            <span class="stepper-label">Qty</span>
+            <div class="stepper-btns">
+              <button type="button" data-step="-1" aria-label="Remove one Peppered Gizzard">−</button>
+              <span class="qty-display">0</span>
+              <button type="button" data-step="1" aria-label="Add one Peppered Gizzard">+</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /pack-picker -->
+
+      <!-- Direct WhatsApp note -->
+      <div class="direct-order-strip reveal">
+        <div>
+          <strong>Need something custom?</strong>
+          <p>Have a special event, need a custom platter, or just prefer to talk it through? Message us directly and we'll sort you out.</p>
+        </div>
+        <a class="btn btn-whatsapp" href="https://wa.me/2348125752341?text=Hello%20Tasty%20Bites!%20I%27d%20like%20to%20discuss%20a%20custom%20order." target="_blank" rel="noopener" style="flex:none;">
+          <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3c-7.2 0-13.04 5.83-13.04 13.02 0 2.3.6 4.46 1.74 6.4L3 29l6.76-1.77a13 13 0 0 0 6.28 1.6h.01c7.2 0 13.04-5.83 13.04-13.02C29.09 8.84 23.25 3 16.04 3z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+    </div><!-- /left col -->
+
+    <!-- RIGHT: Sticky order summary -->
+    <aside class="order-summary">
+      <h3>Your Order Summary</h3>
+      <div class="order-summary-lines">
+        <div class="summary-empty">No packs selected yet. Tap "+" on a pack to add it to your order.</div>
+      </div>
+      <div class="order-summary-total">
+        <span>Total</span>
+        <span class="order-summary-total-amount">₦0</span>
+      </div>
+
+      <div class="order-fields">
+        <div>
+          <label for="order-name">Your Name</label>
+          <input type="text" id="order-name" placeholder="e.g. Chioma Eze" autocomplete="name">
+        </div>
+        <div>
+          <label for="order-phone">Phone Number</label>
+          <input type="tel" id="order-phone" placeholder="e.g. 0812 000 0000" autocomplete="tel">
+        </div>
+        <div>
+          <label for="order-address">Delivery / Pickup Address</label>
+          <input type="text" id="order-address" placeholder="e.g. GRA Phase 2, PH or In-store pickup">
+        </div>
+        <div>
+          <label for="order-when">Preferred Time</label>
+          <select id="order-when">
+            <option value="">— Select a time —</option>
+            <option value="8AM-10AM">8:00 AM – 10:00 AM</option>
+            <option value="10AM-12PM">10:00 AM – 12:00 PM</option>
+            <option value="12PM-2PM">12:00 PM – 2:00 PM</option>
+            <option value="2PM-4PM">2:00 PM – 4:00 PM</option>
+            <option value="4PM-6PM">4:00 PM – 6:00 PM</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn btn-whatsapp btn-block order-send-btn" type="button">
+        <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3c-7.2 0-13.04 5.83-13.04 13.02 0 2.3.6 4.46 1.74 6.4L3 29l6.76-1.77a13 13 0 0 0 6.28 1.6h.01c7.2 0 13.04-5.83 13.04-13.02C29.09 8.84 23.25 3 16.04 3z"/></svg>
+        Send Order via WhatsApp
+      </button>
+      <p style="color:rgba(255,255,255,.4);font-size:.78rem;margin-top:12px;text-align:center;">Opens WhatsApp with your full order pre-typed. Nothing is charged here.</p>
+    </aside>
+
+  </div><!-- /order-layout -->
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M6 19h12v-2.2c0-.5-.4-.9-.9-1a3.6 3.6 0 0 0 .9-2.4c0-1.9-1.5-3.4-3.3-3.4-.2 0-.5 0-.7.1A3.8 3.8 0 0 0 12 8a3.8 3.8 0 0 0-2 .1 4 4 0 0 0-.7-.1C7.5 8 6 9.5 6 11.4c0 .9.3 1.7.9 2.4-.5.1-.9.5-.9 1V19Z"/><path d="M8 19v2h8v-2"/></svg>
+        </span>
+        <span class="brand-text"><span class="t1">Tasty Bites</span></span>
+      </a>
+      <p>PH City's Tastiest Small Chops – Fresh &amp; Absolutely Delicious – Every Bite Counts!</p>
+      <div class="social-row">
+        <a href="https://instagram.com/tastybitesfoods1" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://wa.me/2348125752341" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3c-7.2 0-13.04 5.83-13.04 13.02 0 2.3.6 4.46 1.74 6.4L3 29l6.76-1.77a13 13 0 0 0 6.28 1.6h.01c7.2 0 13.04-5.83 13.04-13.02C29.09 8.84 23.25 3 16.04 3z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="menu.html">Full Menu</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="order.html">Quick Order</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+2348125752341">0812 575 2341</a></li>
+        <li><a href="https://wa.me/2348125752341" target="_blank" rel="noopener">WhatsApp Us</a></li>
+        <li><a href="mailto:hello@tastybites.africa.restaurant">hello@tastybites.africa.restaurant</a></li>
+        <li><a href="contact.html">Contact Page</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Visit</h5>
+      <ul>
+        <li>62/63 East-West Road, Brainfield Arcade, Eliozu Extension, Port Harcourt</li>
+        <li>Open daily, 8:00 AM – 6:00 PM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container foot-bottom">
+    <span>© <span data-year>2026</span> Tasty Bites Small Chops &amp; Grills. All rights reserved.</span>
+    <span>tastybites.africa.restaurant</span>
+  </div>
+</footer>
+
+<!-- WhatsApp floating button -->
+<a class="wa-float" href="https://wa.me/2348125752341?text=Hello%20Tasty%20Bites!%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3c-7.2 0-13.04 5.83-13.04 13.02 0 2.3.6 4.46 1.74 6.4L3 29l6.76-1.77a13 13 0 0 0 6.28 1.6h.01c7.2 0 13.04-5.83 13.04-13.02C29.09 8.84 23.25 3 16.04 3zm0 23.8a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-4 1.05 1.07-3.9-.26-.4a10.78 10.78 0 1 1 9.1 5z"/><path d="M22.1 18.9c-.33-.17-1.95-.96-2.26-1.07-.3-.11-.52-.17-.74.17-.22.33-.85 1.07-1.04 1.3-.19.22-.38.25-.71.08-.33-.17-1.4-.51-2.66-1.63-.98-.87-1.65-1.95-1.84-2.28-.19-.33-.02-.5.15-.67.15-.15.33-.39.5-.58.17-.2.22-.33.33-.55.11-.22.06-.42-.03-.58-.08-.17-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.58.08-.88.42-.3.33-1.15 1.12-1.15 2.73 0 1.6 1.18 3.15 1.34 3.37.17.22 2.32 3.54 5.62 4.96.78.34 1.4.54 1.87.69.79.25 1.5.21 2.07.13.63-.1 1.95-.8 2.23-1.57.27-.78.27-1.45.19-1.58-.08-.14-.3-.22-.63-.39z"/></svg>
+</a>
+
+<!-- Cart drawer -->
+<div class="cart-backdrop"></div>
+<aside class="cart-drawer" aria-label="Your order">
+  <div class="cart-drawer-head">
+    <h3>Your Order</h3>
+    <button class="cart-close" type="button" aria-label="Close cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <div class="cart-items"></div>
+  <div class="cart-drawer-foot">
+    <div class="cart-total"><span>Total</span><span class="cart-total-amount">₦0</span></div>
+    <button class="btn btn-whatsapp btn-block cart-whatsapp-btn" type="button">
+      <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3c-7.2 0-13.04 5.83-13.04 13.02 0 2.3.6 4.46 1.74 6.4L3 29l6.76-1.77a13 13 0 0 0 6.28 1.6h.01c7.2 0 13.04-5.83 13.04-13.02C29.09 8.84 23.25 3 16.04 3z"/></svg>
+      Send Order via WhatsApp
+    </button>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>

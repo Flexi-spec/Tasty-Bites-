@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Menu | Tasty Bites Small Chops &amp; Grills</title>
+<meta name="description" content="Browse the full Tasty Bites menu — small packs, mini &amp; large platters, grills and sides. Fresh small chops made daily in Port Harcourt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)">
+          <path d="M6 19h12v-2.2c0-.5-.4-.9-.9-1a3.6 3.6 0 0 0 .9-2.4c0-1.9-1.5-3.4-3.3-3.4-.2 0-.5 0-.7.1A3.8 3.8 0 0 0 12 8a3.8 3.8 0 0 0-2 .1 4 4 0 0 0-.7-.1C7.5 8 6 9.5 6 11.4c0 .9.3 1.7.9 2.4-.5.1-.9.5-.9 1V19Z"/>
+          <path d="M8 19v2h8v-2"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="t1">Tasty <span>Bites</span></span>
+        <span class="t2">Small Chops &amp; Grills</span>
+      </span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html" aria-current="page">Menu</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="order.html">Order</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-whatsapp btn-sm nav-wa" href="https://wa.me/2348125752341?text=Hello%20Tasty%20Bites!%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3c-7.2 0-13.04 5.83-13.04 13.02 0 2.3.6 4.46 1.74 6.4L3 29l6.76-1.77a13 13 0 0 0 6.28 1.6h.01c7.2 0 13.04-5.83 13.04-13.02C29.09 8.84 23.25 3 16.04 3zm0 23.8a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-4 1.05 1.07-3.9-.26-.4a10.78 10.78 0 1 1 9.1 5z"/></svg>
+        <span class="nav-wa-text">Order Now</span>
+      </a>
+      <button class="cart-pill" aria-label="View order cart" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-count">0</span>
+      </button>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="nav-backdrop"></div>
+</header>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Menu</div>
+    <span class="eyebrow">Full Menu</span>
+    <h1>Fresh small chops, platters &amp; grills</h1>
+    <p>Every item is prepared fresh to order. Tap a category to filter, add items to your demo cart, then send your order straight to WhatsApp.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="filter-row reveal">
+      <button class="filter-btn active" data-filter="all" type="button">All Items</button>
+      <button class="filter-btn" data-filter="small-packs" type="button">Small Packs</button>
+      <button class="filter-btn" data-filter="mini-platters" type="button">Mini Platters</button>
+      <button class="filter-btn" data-filter="large-platters" type="button">Large Platters</button>
+      <button class="filter-btn" data-filter="grills" type="button">Grills</button>
+      <button class="filter-btn" data-filter="sides" type="button">Sides</button>
+    </div>
+
+    <!-- SMALL PACKS -->
+    <div data-menu-category="small-packs">
+      <h3 class="menu-section-title reveal">Small Packs</h3>
+      <p class="menu-section-sub reveal">Perfect for one — a quick, satisfying mix of our favourites.</p>
+      <div class="grid-cards">
+        <article class="ticket-card reveal">
+          <div class="ticket-media"><span class="ticket-tag">Most Popular</span><img src="https://picsum.photos/seed/menu-regular-pack/600/450" alt="Regular Pack of small chops"></div>
+          <div class="ticket-divider"></div>
+          <div class="ticket-body">
+            <h4>Regular Pack</h4>
+            <p class="desc">4 puff puff, 4 plantain pops/mosa, 1 spring roll, 1 samosa, 1 gizzard, 1 fish nugget, 1 BBQ chicken.</p>
+            <div class="ticket-foot"><span class="ticket-price">₦4,000<small>per pack</small></span>
+              <button class="add-btn" type="button" data-id="regular-pack" data-name="Regular Pack" data-price="4000" aria-label="Add Regular Pack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            </div>
+          </div>
+        </article>
+        <article class="ticket-card reveal">
+          <div class="ticket-media"><img src="https://picsum.photos/seed/menu-spring-roll-pack/600/450" alt="Spring roll pack"></div>
+          <div class="ticket-divider"></div>
+          <div class="ticket-body">
+            <h4>Spring Roll Pack (10pcs)</h4>
+            <p class="desc">Crispy, golden spring rolls packed with seasoned filling.</p>
+            <div class="ticket-foot"><span class="ticket-price">₦3,500<small>per pack</small></span>
+              <button class="add-btn" type="button" data-id="spring-roll-pack" data-name="Spring Roll Pack (10pcs)" data-price="3500" aria-label="Add Spring Roll Pack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            </div>
+          </div>
+        </article>
+        <article class="ticket-card reveal">
+          <div class="ticket-media"><img src="https://picsum.photos/seed/menu-samosa-pack/600/450" alt="Samosa pack"></div>
+          <div class="ticket-divider"></div>
+          <div class="ticket-body">
+            <h4>Samosa Pack (10pcs)</h4>
+            <p class="desc">Flaky pastry parcels with our signature spiced filling.</p>
+            <div class="ticket-foot"><span class="ticket-price">₦3,000<small>per pack</small></span>
+              <button class="add-btn" type="button" data-id="samosa-pack" data-name="Samosa Pack (10pcs)" data-price="3000" aria-label="Add Samosa Pack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- MINI PLATTERS -->
+    <div data-menu-category="mini-platters">
+      <h3 class="menu-section-title reveal">Mini Platters</h3>
+      <p class="menu-section-sub reveal">Great for small gatherings, office treats and date nights.</p>
+      <div class="grid-cards">
+        <article class="ticket-card reveal">
+          <div class="ticket-media"><span class="ticket-tag">Free Puff Puff</span><img src="https://picsum.photos/seed/menu-mini-platter/600/450" alt="Mini Platter"></div>
+          <div class="ticket-divider"></div>
+          <div class="ticket-body">
+            <h4>Mini Platter</h4>
+            <p class="desc">A generous mix of puff puff, spring rolls, samosas, gizzard, fish nuggets &amp; BBQ chicken — often with a free puff puff promo.</p>
+            <div class="ticket-foot"><span class="ticket-price">₦19,000<small>per platter</small></span>
+              <button class="add-btn" type="button" data-id="mini-platter" data-name="Mini Platter" data-price="19000" aria-label="Add Mini Platter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            </div>
+          </div>
+        </article>
+        <article class="ticket-card reveal">
+          <div class="ticket-media"><img src="https://picsum.photos/seed/menu-mini-deluxe/600/450" alt="Mini Platter Deluxe"></div>
+          <div class="ticket-divider"></div>
+          <div class="ticket-body">
+            <h4>Mini Platter Deluxe</h4>
+            <p class="desc">Everything in the Mini Platter, plus extra grilled skewers and snails.</p>
+            <div class="ticket-foot"><span class="ticket-price">₦21,000<small>per platter</small></span>
+              <button class="add-btn" type="button" data-id="mini-platter-deluxe" data-name="Mini Platter Deluxe" data-price="21000" aria-label="Add Mini Platter Deluxe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- LARGE PLATTERS -->
+    <div data-menu-category="large-platters">
+      <h3 class="menu-section-title reveal">Large Platters</h3>
+      <p class="menu-section-sub reveal">Built for parties, events and big office orders.</p>
+      <div class="grid-cards">
+        <article class="ticket-card reveal">
+          <div class="ticket-media"><span class="ticket-tag">For Events</span><img src="https://picsum.photos/seed/menu-large-platter/600/450" alt="Large Platter"></div>
+          <div class="ticket-divider"></div>
+          <div class="ticket-body">
+            <h4>Large Platter</h4>
+            <p class="desc">Our generous, full-size platter loaded with assorted small chops and grills.</p>
+            <div class="ticket-foot"><span class="ticket-price">₦23,000<small>per platter</small></span>
+              <button class="add-btn" type="button" data-id="large-platter" data-name="Large Platter" data-price="23000" aria-label="Add Large Platter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            </div>
+          </div>
+        </article>
+        <article class="ticket-card reveal">
+          <div class="ticket-media"><span class="ticket-tag">Best Value</span><img src="https://picsum.photos/seed/menu-royal-platter/600/450" alt="Royal Platter"></div>
+          <div class="ticket-divider"></div>
+          <div class="ticket-body">
+            <h4>Royal Platter</h4>
+            <p class="desc">Our biggest platter — extra grills, snails and a wider variety for bigger events.</p>
+            <div class="ticket-foot"><span class="ticket-price">₦28,000<small>per platter</small></span>
+              <button class="add-btn" type="button" data-id="royal-platter" data-name="Royal Platter" data-price="28000" aria-label="Add Royal Platter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- GRILLS -->
+    <div data-menu-category="grills">
+      <h3 class="menu-section-title reveal">Grills</h3>
+      <p class="menu-section-sub reveal">Char-grilled and smoky, made to order with your preferred spice level.</p>
+      <div class="grid-cards">
+        <article class="ticket-card reveal">
+          <div class="ticket-media"><img src="https://picsum.photos/seed/menu-bbq-chicken/600/450" alt="BBQ Chicken"></div>
+          <div class="ticket-divider"></div>
+          <div class="ticket-body">
+            <h4>BBQ Chicken (per piece)</h4>
+            <p class="desc">Smoky, char-grilled chicken with our house peppered glaze.</p>
+            <div class="ticket-foot"><span class="ticket-price">₦1,800<small>per piece</small></span>
+              <button class="add-btn" type="button" data-id="bbq-chicken-grill" data-name="BBQ Chicken" data-price="1800" aria-label="Add BBQ Chicken"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            </div>
+          </div>
+        </article>
+        <article class="ticket-card reveal">
+          <div class="ticket-media"><img src="https://picsum.photos/seed/menu-beef-skewers/600/450" alt="Peppered Beef Skewers"></div>
+          <div class="ticket-divider"></div>
+          <div class="ticket-body">
+            <h4>Peppered Beef Skewers</h4>
+            <p class="desc">Tender beef chunks grilled and tossed in peppered sauce.</p>
+            <div class="ticket-foot"><span class="ticket-price">₦2,200<small>per skewer set</small></span>
+              <button class="add-btn" type="button" data-id="beef-skewers" data-name="Peppered Beef Skewers" data-price="2200" aria-label="Add Peppered Beef Skewers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            </div>
+          </div>
+        </article>
+        <article class="ticket-card reveal">
+          <div class="ticket-media"><img src="https://picsum.photos/seed/menu-fish-nuggets/600/450" alt="Grilled Fish Nuggets"></div>
+          <div class="ticket-divider"></div>
+          <div class="ticket-body">
+            <h4>Grilled Fish Nuggets</h4>
+            <p class="desc">Lightly battered fish, grilled until golden and flaky inside.</p>
+            <div class="ticket-foot"><span class="ticket-price">₦2,000<small>per portion</small></span>
+              <button class="add-btn" type="button" data-id="fish-nuggets" data-name="Grilled Fish Nuggets" data-price="2000" aria-label="Add Grilled Fish Nuggets"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            </div>
+          </div>
+        </article>
+        <article class="ticket-card reveal">
+          <div class="ticket-media"><img src="https://picsum.photos/seed/menu-chicken-wings/600/450" alt="Suya-style Grilled Chicken Wings"></div>
+          <div class="ticket-divider"></div>
+          <div class="ticket-body">
+            <h4>Suya-Style Chicken Wings</h4>
+            <p class="desc">Grilled wings rubbed with traditional suya spice.</p>
+            <div class="ticket-foot"><span class="ticket-price">₦2,500<small>per portion</small></span>
+              <button class="add-btn" type="button" data-id="suya-wings" data-name="Suya-Style Chicken Wings" data-price="2500" aria-label="Add Suya-Style Chicken Wings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- SIDES -->
+    <div data-menu-category="sides">
+      <h3 class="menu-section-title reveal">Sides &amp; Extras</h3>
+      <p class="menu-section-sub reveal">Add-ons to round out your order.</p>
+      <div class="grid-cards">
+        <article class="ticket-card reveal">
+          <div class="ticket-media"><img src="https://picsum.photos/seed/menu-chin-chin/600/450" alt="Chin Chin"></div>
+          <div class="ticket-divider"></div>
+          <div class="ticket-body">
+            <h4>Chin Chin</h4>
+            <p class="desc">Crunchy, lightly sweetened fried pastry bites.</p>
+            <div class="ticket-foot"><span class="ticket-price">₦1,500<small>per pack</small></span>
+              <button class="add-btn" type="button" data-id="chin-chin" data-name="Chin Chin" data-price="1500" aria-label="Add Chin Chin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            </div>
+          </div>
+        </article>
+        <article class="ticket-card reveal">
+          <div class="ticket-media"><img src="https://picsum.photos/seed/menu-meatballs/600/450" alt="Meatballs"></div>
+          <div class="ticket-divider"></div>
+          <div class="ticket-body">
+            <h4>Meatballs (10pcs)</h4>
+            <p class="desc">Seasoned, pan-fried meatballs — a party favourite.</p>
+            <div class="ticket-foot"><span class="ticket-price">₦2,800<small>per pack</small></span>
+              <button class="add-btn" type="button" data-id="meatballs" data-name="Meatballs (10pcs)" data-price="2800" aria-label="Add Meatballs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            </div>
+          </div>
+        </article>
+        <article class="ticket-card reveal">
+          <div class="ticket-media"><img src="https://picsum.photos/seed/menu-snails/600/450" alt="Skewered Snails"></div>
+          <div class="ticket-divider"></div>
+          <div class="ticket-body">
+            <h4>Skewered Snails</h4>
+            <p class="desc">Grilled snails on skewers, lightly peppered.</p>
+            <div class="ticket-foot"><span class="ticket-price">₦3,000<small>per skewer set</small></span>
+              <button class="add-btn" type="button" data-id="snails" data-name="Skewered Snails" data-price="3000" aria-label="Add Skewered Snails"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            </div>
+          </div>
+        </article>
+        <article class="ticket-card reveal">
+          <div class="ticket-media"><img src="https://picsum.photos/seed/menu-plantain-pops/600/450" alt="Plantain Pops"></div>
+          <div class="ticket-divider"></div>
+          <div class="ticket-body">
+            <h4>Plantain Pops / Mosa</h4>
+            <p class="desc">Sweet, golden fried plantain bites.</p>
+            <div class="ticket-foot"><span class="ticket-price">₦1,800<small>per pack</small></span>
+              <button class="add-btn" type="button" data-id="plantain-pops" data-name="Plantain Pops / Mosa" data-price="1800" aria-label="Add Plantain Pops"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATTER COMPARISON -->
+<section class="section section--deep">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Not Sure Which to Pick?</span>
+      <h2 class="display">Platter comparison</h2>
+    </div>
+    <div class="compare-wrap reveal">
+      <table class="compare">
+        <thead>
+          <tr><th>Pack</th><th>Regular Pack</th><th>Mini Platter</th><th>Large Platter</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Price</td><td class="price-cell">₦4,000</td><td class="price-cell">₦19,000</td><td class="price-cell">₦23,000–₦28,000</td></tr>
+          <tr><td>Best for</td><td>1 person</td><td>3–5 people</td><td>8–15+ people / events</td></tr>
+          <tr><td>Puff Puff</td><td>4 pcs</td><td>Generous mix</td><td>Generous mix</td></tr>
+          <tr><td>Spring Rolls &amp; Samosas</td><td>1 each</td><td>✓ Included</td><td>✓ Included</td></tr>
+          <tr><td>Gizzard</td><td>1 pc</td><td>✓ Included</td><td>✓ Included</td></tr>
+          <tr><td>BBQ Chicken</td><td>1 pc</td><td>✓ Included</td><td>✓ Included</td></tr>
+          <tr><td>Snails / Extra Grills</td><td>—</td><td>Add-on</td><td>✓ Included</td></tr>
+          <tr><td>Free Puff Puff Promo</td><td>—</td><td>Often included</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOM ORDER NOTE -->
+<section class="section--tight section">
+  <div class="container">
+    <div class="note-box reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="3.2"/></svg>
+      <div>
+        <h4>Need a custom mix or spice level?</h4>
+        <p>Allergic to something, want it extra spicy, or planning an event with a custom headcount? Message us on WhatsApp with your preferences and we'll put together a platter that fits — no extra charge for reasonable customizations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="brand">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M6 19h12v-2.2c0-.5-.4-.9-.9-1a3.6 3.6 0 0 0 .9-2.4c0-1.9-1.5-3.4-3.3-3.4-.2 0-.5 0-.7.1A3.8 3.8 0 0 0 12 8a3.8 3.8 0 0 0-2 .1 4 4 0 0 0-.7-.1C7.5 8 6 9.5 6 11.4c0 .9.3 1.7.9 2.4-.5.1-.9.5-.9 1V19Z"/><path d="M8 19v2h8v-2"/></svg></span>
+        <span class="brand-text"><span class="t1">Tasty Bites</span></span>
+      </a>
+      <p>PH City's Tastiest Small Chops – Fresh &amp; Absolutely Delicious – Every Bite Counts!</p>
+      <div class="social-row">
+        <a href="https://instagram.com/tastybitesfoods1" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://wa.me/2348125752341" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3c-7.2 0-13.04 5.83-13.04 13.02 0 2.3.6 4.46 1.74 6.4L3 29l6.76-1.77a13 13 0 0 0 6.28 1.6h.01c7.2 0 13.04-5.83 13.04-13.02C29.09 8.84 23.25 3 16.04 3z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="menu.html">Full Menu</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="order.html">Quick Order</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+2348125752341">0812 575 2341</a></li>
+        <li><a href="https://wa.me/2348125752341" target="_blank" rel="noopener">WhatsApp Us</a></li>
+        <li><a href="mailto:hello@tastybites.africa.restaurant">hello@tastybites.africa.restaurant</a></li>
+        <li><a href="contact.html">Contact Page</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Visit</h5>
+      <ul>
+        <li>62/63 East-West Road, Brainfield Arcade, Eliozu Extension, Port Harcourt</li>
+        <li>Open daily, 8:00 AM – 6:00 PM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container foot-bottom">
+    <span>© <span data-year>2026</span> Tasty Bites Small Chops &amp; Grills. All rights reserved.</span>
+    <span>tastybites.africa.restaurant</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/2348125752341?text=Hello%20Tasty%20Bites!%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3c-7.2 0-13.04 5.83-13.04 13.02 0 2.3.6 4.46 1.74 6.4L3 29l6.76-1.77a13 13 0 0 0 6.28 1.6h.01c7.2 0 13.04-5.83 13.04-13.02C29.09 8.84 23.25 3 16.04 3zm0 23.8a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-4 1.05 1.07-3.9-.26-.4a10.78 10.78 0 1 1 9.1 5z"/><path d="M22.1 18.9c-.33-.17-1.95-.96-2.26-1.07-.3-.11-.52-.17-.74.17-.22.33-.85 1.07-1.04 1.3-.19.22-.38.25-.71.08-.33-.17-1.4-.51-2.66-1.63-.98-.87-1.65-1.95-1.84-2.28-.19-.33-.02-.5.15-.67.15-.15.33-.39.5-.58.17-.2.22-.33.33-.55.11-.22.06-.42-.03-.58-.08-.17-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.58.08-.88.42-.3.33-1.15 1.12-1.15 2.73 0 1.6 1.18 3.15 1.34 3.37.17.22 2.32 3.54 5.62 4.96.78.34 1.4.54 1.87.69.79.25 1.5.21 2.07.13.63-.1 1.95-.8 2.23-1.57.27-.78.27-1.45.19-1.58-.08-.14-.3-.22-.63-.39z"/></svg>
+</a>
+
+<div class="cart-backdrop"></div>
+<aside class="cart-drawer" aria-label="Your order">
+  <div class="cart-drawer-head">
+    <h3>Your Order</h3>
+    <button class="cart-close" type="button" aria-label="Close cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <div class="cart-items"></div>
+  <div class="cart-drawer-foot">
+    <div class="cart-total"><span>Total</span><span class="cart-total-amount">₦0</span></div>
+    <button class="btn btn-whatsapp btn-block cart-whatsapp-btn" type="button">
+      <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3c-7.2 0-13.04 5.83-13.04 13.02 0 2.3.6 4.46 1.74 6.4L3 29l6.76-1.77a13 13 0 0 0 6.28 1.6h.01c7.2 0 13.04-5.83 13.04-13.02C29.09 8.84 23.25 3 16.04 3z"/></svg>
+      Send Order via WhatsApp
+    </button>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
